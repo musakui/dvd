@@ -17,21 +17,22 @@ const renderer = new WebGLRenderer({ antialias: true })
 
 const scene = new Scene()
 const camera = new PerspectiveCamera(50, 1, 0.1, 100)
-camera.position.set(0, 0, 5)
+camera.position.set(0, 0, 4)
 
 const controls = new OrbitControls(camera, renderer.domElement)
 controls.enablePan = false
 controls.enableKeys = false
-controls.minDistance = 5
-controls.maxDistance = 9
+controls.minDistance = 3
+controls.maxDistance = 6
 controls.maxAzimuthAngle = Math.PI / 2
 controls.minAzimuthAngle = -Math.PI / 2
 
-const boxSize = new Vector3(1.5, 1.5, 1)
 const velocity = new Vector3(rand(), rand(), rand())
 velocity.normalize()
 
 const material = new MeshBasicMaterial({ color: 0xFFFFFF })
+
+const boxSize = new Vector3(1.5, 1, 0.5)
 
 let logo
 let last = 0
@@ -42,7 +43,11 @@ document.body.appendChild(renderer.domElement)
 
 loader.load('dvd.glb', (data) => {
   logo = data.scene.children[0]
-  logo.children.forEach((m) => { m.material = material })
+  logo.position.set(0, 0, 0)
+  logo.children.forEach((m) => {
+    m.material = material
+    m.position.y -= 0.2
+  })
   scene.add(logo)
 })
 
