@@ -1,8 +1,11 @@
 import {
+  Mesh,
   Scene,
   Vector3,
+  BoxHelper,
   WebGLRenderer,
   MeshBasicMaterial,
+  BoxBufferGeometry,
   PerspectiveCamera,
 } from 'three'
 
@@ -33,6 +36,16 @@ velocity.normalize()
 const material = new MeshBasicMaterial({ color: 0xFFFFFF })
 
 const boxSize = new Vector3(1.5, 1, 0.5)
+
+const box = new Mesh(new BoxBufferGeometry())
+box.scale.set(5, 2.8, 3)
+const helper = new BoxHelper(box, 0xFFFFFF)
+helper.visible = false
+scene.add(helper)
+
+window.addEventListener('click', (e) => {
+  helper.visible = !helper.visible
+}, false)
 
 let logo
 let last = 0
