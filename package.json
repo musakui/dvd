@@ -12,7 +12,7 @@
   "author": "randName()",
   "license": "MIT",
   "dependencies": {
-    "three": "^0.115.0"
+    "three": "^0.137.0"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^7.1.3",
