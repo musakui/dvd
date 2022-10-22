@@ -1,22 +1,21 @@
 {
   "name": "dvd",
-  "private": true,
-  "version": "0.0.1",
   "description": "boing",
+  "licence": "MIT",
+  "author": "musakui",
   "repository": "github:musakui/dvd",
-  "main": "docs/app.js",
+  "private": true,
+  "version": "0.0.2",
   "scripts": {
-    "dev": "rollup --config --watch",
-    "build": "rollup --config"
+    "build": "vite build",
+    "dev": "vite"
   },
-  "author": "randName()",
-  "license": "MIT",
   "dependencies": {
-    "three": "^0.115.0"
+    "@babylonjs/core": "^5.29.0",
+    "@babylonjs/loaders": "^5.29.0"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^7.1.3",
-    "rollup-plugin-terser": "^7.0.0",
-    "rollup": "^2.7.2"
+    "vite": "^3.1.8",
+    "vite-plugin-html": "^3.2.0"
   }
 }
