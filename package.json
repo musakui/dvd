@@ -5,17 +5,17 @@
   "author": "musakui",
   "repository": "github:musakui/dvd",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "build": "vite build",
     "dev": "vite"
   },
   "dependencies": {
-    "@babylonjs/core": "^5.29.0",
-    "@babylonjs/loaders": "^5.29.0"
+    "@babylonjs/core": "^5.38.0",
+    "@babylonjs/loaders": "^5.38.0"
   },
   "devDependencies": {
-    "vite": "^3.1.8",
+    "vite": "^4.0.0",
     "vite-plugin-html": "^3.2.0"
   }
 }
